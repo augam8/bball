@@ -1,6 +1,6 @@
 class CoachesController < ApplicationController
-  before_action :set_coach, only: [:show, :edit, :update, :destroy]
-
+  # before_action :set_coach, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   # GET /coaches
   # GET /coaches.json
   def index
