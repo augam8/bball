@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @coach.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @coach.last_name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @coach.bio %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @coach.location %>
+</p>
+
+<p>
+  <strong>Session:</strong>
+  <%= @coach.session %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @coach.cost %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @coach.availability %>
+</p>
+
+<%= link_to 'Edit', edit_coach_path(@coach) %> |
+<%= link_to 'Back', coaches_path %>
