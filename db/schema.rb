@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_160510) do
+ActiveRecord::Schema.define(version: 2020_03_14_043715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_03_13_160510) do
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "coach_id", null: false
+    t.index ["coach_id"], name: "index_bookings_on_coach_id"
   end
 
   create_table "coaches", force: :cascade do |t|
@@ -70,5 +72,6 @@ ActiveRecord::Schema.define(version: 2020_03_13_160510) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "coaches"
   add_foreign_key "coaches", "users"
 end

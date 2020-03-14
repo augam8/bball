@@ -1,3 +1,3 @@
 class Booking < ApplicationRecord
-    belongs_to :coaches
+    belongs_to :coach
 end

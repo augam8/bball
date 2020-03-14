@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<%# <% raise %> 
   <div class="field">
     <%= form.label :date %>
     <%= form.datetime_select :date %>
@@ -20,7 +20,7 @@
     <%= form.label :message %>
     <%= form.text_area :message %>
   </div>
-
+  <%= form.hidden_field :coach_id, value: "#{@coach_id}" %>
   <div class="actions">
     <%= form.submit %>
   </div>
