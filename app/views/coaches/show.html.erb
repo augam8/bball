@@ -1,39 +1,58 @@
 <p id="notice"><%= notice %></p>
 
+<% if @coach.image.attached? %>
+    <% @coach.images.each do |img| %>
+      <%= image_tag img %>
+    <% end  %>
+<% end %> 
+
 <p>
   <strong>First name:</strong>
-  <%= @coach.first_name %>
+  <%= @coach.first_name %><br>
 </p>
 
 <p>
   <strong>Last name:</strong>
-  <%= @coach.last_name %>
+  <%= @coach.last_name %><br>
 </p>
 
 <p>
   <strong>Bio:</strong>
-  <%= @coach.bio %>
+  <%= @coach.bio %><br>
 </p>
 
 <p>
   <strong>Location:</strong>
-  <%= @coach.location %>
+  <%= @coach.location %><br>
 </p>
 
 <p>
   <strong>Session:</strong>
-  <%= @coach.session %>
+  <%= @coach.session %><br>
 </p>
 
 <p>
   <strong>Cost:</strong>
-  <%= @coach.cost %>
+  <%= @coach.cost %><br>
 </p>
 
 <p>
   <strong>Availability:</strong>
-  <%= @coach.availability %>
+  <%= @coach.availability %><br>
 </p>
+
+
+
+
+<%# <% if user_signed_in? && current.user_id != @coach.user_id %> 
+<%# <%= button_to "Add #{@coach.first_name} to bookings" %> 
+<%# <% unless user_signed_in? && current.user_id = @coach.user_id %> 
+<%# <%= button_to "Add #{@coach.first_name} to bookings", new_user_session_path %> 
+<%# <% end %> 
+<%# <% end %> 
+
+
 
 <%= link_to 'Edit', edit_coach_path(@coach) %> |
 <%= link_to 'Back', coaches_path %>
+<%= link_to 'BOOK', new_booking_path %>

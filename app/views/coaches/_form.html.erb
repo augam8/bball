@@ -10,6 +10,14 @@
       </ul>
     </div>
   <% end %>
+ 
+  <% if coach.image.attached? %>
+    <% coach.images.each do |img| %>
+      <%= image_tag img %> 
+      <% end %>
+<% end%>
+  
+  
 
   <div class="field">
     <%= form.label :first_name %>
@@ -46,7 +54,13 @@
     <%= form.datetime_select :availability %>
   </div>
 
+  <div class="field">
+    <%# <%= form.label :image accept:'image/png, image/gif, image/jpeg, image/jpg' %> 
+    <%= form.file_field :image, multiple: true %>
+  </div>
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>
+<br>  
 <% end %>

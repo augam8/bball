@@ -5,10 +5,13 @@
   <%= @booking.date %>
 </p>
 
+
 <p>
   <strong>Message:</strong>
   <%= @booking.message %>
 </p>
-
+</div>
+<%= link_to "BOOK_NOW" , new_booking_path({coach: @coach.id}),class:"continue" %>
+</div>
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>

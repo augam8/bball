@@ -10,6 +10,7 @@ class CoachesController < ApplicationController
   # GET /coaches/1
   # GET /coaches/1.json
   def show
+    @coach = Coach.find(params[:id])
   end
 
   # GET /coaches/new
@@ -25,6 +26,7 @@ class CoachesController < ApplicationController
   # POST /coaches.json
   def create
     @coach = Coach.new(coach_params)
+    @coach.user = current_user
 
     respond_to do |format|
       if @coach.save
@@ -67,6 +69,14 @@ class CoachesController < ApplicationController
       @coach = Coach.find(params[:id])
     end
 
+    def set_user_coach
+      id = params[:id]
+      @coach = current_user.coaches.find_by_id(id)
+  
+      if @coach == nil
+          redirect_to coaches_path
+      end
+  end
     # Only allow a list of trusted parameters through.
     def coach_params
       params.require(:coach).permit(:first_name, :last_name, :bio, :location, :session, :cost, :availability)
