@@ -1,22 +1,23 @@
 # README
 
 Link to live application: https://bball-app.heroku.com
+
 Link to Github repo: https://github.com/augam8/bball
 
-####Description of Ballers Alliance App
+**Description of Ballers Alliance App**
 
 Ballers Alliance App is an online marketplace app that connects basketball players and coaches. The purpose of this app is to provide a way for the two types of users to network in a convenient and easy way. 
 
-####Target Audience 
+**Target Audience** 
 
 The target market for this app are parents with young children that have passion for basketball. These families have busy lifestyles but at same time they want to encourage their kids to keep fit and active by playing the sport. The young kids are dedicated who love the sport and want to develop and be better players. The parents see their kids potential and want to take this further than just a fun activity game. 
 The other target market for this app are coaches between the ages of 18-60 that also have a passion for basketball and looking for a way to share their knowledge and skills. 
 
-####Functionality
+**Functionality**
 
 The aim of the app is to make the online user experience simple, easy and effective. This saves time for both players and coaches to interact and manage their time effectively. The goal is a registered user can book a coach and a coach can upload their profile.
 
-####Features of this app:
+**Features of this app**
 
 Secure log in, Sign In and Sign Up 
 Validation using Devise ( Authentication and Authorisation )
@@ -29,7 +30,8 @@ View User account
 Stripe for payment transactions (futureimplementation)
 
 
-####Techstack 
+**Techstack**
+
 Front end - HTML, CSS, SASS, BOOTSTRAP
 
 HTML - stands for HyperText Markup Language is a language that is used to create web pages. Used mostly for structure, capable of basic styling for elements.
@@ -47,7 +49,7 @@ Database - PostgreSQL with Active Record
 
 Heroku - for deployment
 
-####Configuration / Installation Instructions
+**Configuration / Installation Instructions**
 
 Clone the github repository and install the files to the directory you wish to save the files. https://github.com/augam8/bball.git
 
@@ -61,11 +63,11 @@ Clone the github repository and install the files to the directory you wish to s
 
 5.Sign Up and register and browse all the website
 
-####Sitemap
+**Sitemap**
 
 ![Sitemap](app/assets/images/sitemap.jpg)
 
-####Identification of the problem you are trying to solve by building this particular marketplace app.
+**Identification of the problem you are trying to solve by building this particular marketplace app.**
 
 The justification for a service that brings coaches and players is there already as for every sport out there there is a coach present. The problem I am trying to solve in this app is the hassle and time inconvenience to find and connect coaches and basketball players in an easy and effective manner. Finding a basketball coach is hard, they are often not advertised or they are already coaching at a sports venue. Finding an available coach for extra training is not very easy to find. Often you will need to search through a bunch of websites only to find a coach for other sports types. Or you will have to ask around the sports community if they know anyone who is coaching privately. This is a really big problem because most people have busy lifestyles and their time is very limited due to work commitments and other factors.
 
@@ -79,7 +81,7 @@ There is clearly a need to develop this type of marketplace app as it caters a n
 
 By creating this app the basketball players and coaches can network and collaborate with each other, alleviate their planning time and deliver high quality training to basketball athletes.
 
-####Why is it a problem that needs solving?
+**Why is it a problem that needs solving?**
 
 It is a problem that needs solving because it is hard to find reliable coaches and alot of the time is wasted sifting through websites after websites. I myself was a victim of this inconvenience because my kids both play basketball. They love the game and I could see they really want to work hard to improve their game. They asked me if there was a way they could go for extra training. The solution to that was to find a coach. The problem was it was too painstaking  job to find a coach we had to sift through a bunch of websites that offered basketball coaching. This task took so long as most websites had coaches for different types of sports. We knew that there are many coaches willing to teach but it was hard to find them. I know many parents experience the same thing as this is always asked among each other during the game and training sessions as their kids also want to train more. The sports clubs only offered training day once a week and that was not enough. 
 
@@ -91,8 +93,9 @@ For Coaches there are many advantages for them that this app brings. One of the 
 
 The other benefit I have found is that it also meets our needs as a developer to seek out a niche such as this that could help many athletes and coaches out there and utilise their skills.
 
-####User Stories 
-#####User Model
+**User Stories**
+
+**User Model**
 
 has_many :users
 has_many :coaches
@@ -100,29 +103,32 @@ has_many :bookings
 has_and_belongs_to_many :bookings
 The User has many Coaches, user can train with many coaches. A User also can have many bookings, user can book as many coaches they want.
 
-#####Coach Model
+**Coach Model**
 belongs_to :user
 has _many :bookings
 Has_one_attached :image
 Coach has one attached image uploaded on their profile. Coach has many bookings. Coach belong to user once they have been booked.
 
-#####Booking Model
+**Booking Model**
 has_many :booking
 belongs_to :user
 belongs_to :coach
 Booking belongs to the user - this will give the user the information regarding the details of their bookings. Booking also belongs to a coach - this model gives information to the coach about their bookings. 
 
-####WIREFRAMES
+**WIREFRAMES**
+I developed the wireframes using an online tool called balsamiq mockups. The wireframes are for desktop view and mobile view.
 
 ![wireframes shots](/app/assets/images/wf1.jpg)
 ![wireframe shots](/app/assets/images/wf2.png)
 ![wireframes](/app/assets/images/wf3.png)
 ![wireframes](/app/assets/images/wf4.png)
 ![wireframes](/app/assets/images/wf5.png)
+![wireframe](/app/assets/images/mobilewf.png)
+![wireframe](/app/assets/images/IPADWF.png)
 
 
 
-####Explain the different high-level components (abstractions) in your app
+**Explain the different high-level components (abstractions) in your app**
 
 There are a few high level components for this app. Here is an outline of each them below;
 
@@ -144,7 +150,7 @@ Devise is a gem which is a third party library that can be installed inside ruby
 
 Stripe is also another high level component in this app but i did not have the time to implement it. It is a platform used to securely process transaction payments between users.
 
-####Detail any third party services that your app will use
+**Detail any third party services that your app will use**
 
 The following are the third party services that this app used;
 
@@ -180,7 +186,7 @@ Is an online website I used to create my site map and user journey flow. https:/
 
 Stripe is to be used to process the payments between users.
 
-####Describe your projects models in terms of the relationships (active record associations) they have with each other
+**Describe your projects models in terms of the relationships (active record associations) they have with each other**
 
 There are three models that have active record associations for this app; the user, the coach and the booking. These relationships can be described in the next question. 
 
@@ -191,10 +197,10 @@ There are three models that have active record associations for this app; the us
 
 **User Model**
 
-has_many :users
+
 has_many :coaches
 has_many :bookings
-has_and_belongs_to_many :bookings
+belongs_to :bookings
 The User has many Coaches, user can train with many coaches. A User also can have many bookings, user can book as many coaches they want.
 
 **Coach Model**
@@ -206,12 +212,11 @@ Coach has one attached image uploaded on their profile. Coach has many bookings.
 
 **Booking Model**
 
-has_many :booking
 belongs_to :user
 belongs_to :coach
 Booking belongs to the user - this will give the user the information regarding the details of their bookings. Booking also belongs to a coach - this model gives information to the coach about their bookings. 
 
-####Discuss the database relations to be implemented in your application
+**Discuss the database relations to be implemented in your application**
 
 There are three main tables implemented on this app, the User Table, the Coach Table and the Booking Table.
 Here is the rationale for the relationships of these tables;
@@ -225,14 +230,14 @@ There is also two other table that was created automatically by running the gem 
 
 __Active Storage Attachment Table and Active Storage Blobs__ - these tables allow me to upload images through forms. It is a layer that is used to talk to AWS S3 API for hosting the images 
 
-####Provide your database schema design
+**Provide your database schema design**
 
 ![ERD](app/assets/images/ERD.jpg)
 ![Schema shots](app/assets/images/schema1.png)
 ![schema shots](app/assets/images/schema2.png)
 ![schema shots](app/assets/images/schema3.png)
 
-####Describe the way tasks are allocated and tracked in your project
+**Describe the way tasks are allocated and tracked in your project**
 
 Trello was used to manage the workflow in this application. The most important factor in this app is labelling each task by following the requirements set out for this project. After a task was done or rather started I moved these tasks to the next stages of completion. I used Trello at the beginning of this project but found myself constantly adding and editing requirements I had not listed. There was a lot of going back and forth with the tasks as I would start the next task even if I haven’t finished the other task. Alot of tasks were thought of and added to the trello board along the way. Towards the end I did not pay much attention to this trello and focus more on coding and trying to get my app working. I have summarised my journey with this app in weekly block below;
 
